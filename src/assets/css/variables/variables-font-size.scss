@@ -1,0 +1,15 @@
+$font-size: (
+        min: 5px,
+        xxs: 10px,
+        xs: 15px,
+        sm: 20px,
+        md: 40px,
+        lg: 60px,
+        xl: 80px,
+        xxl: 100px,
+        max: 200px
+) !default;
+
+@mixin fontSize($size) {
+  font-size: map-get($font-size, $size);
+}

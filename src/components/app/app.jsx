@@ -1,6 +1,7 @@
 import React from 'react';
 import './app.css';
-import Modal from "../modal/modal";
+import Modal from "../modal";
+import Button from "../button";
 
 class App extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class App extends React.Component {
                        subtitle={'Modal subtitle'}
                        description={'Modal description'}/>
                 }
-                <button onClick={this.toggleModal}>vds</button>
+                <Button onClick={this.toggleModal} size={'sm'} block color={'red'}/>
             </div>
         );
     }

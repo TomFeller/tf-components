@@ -12,7 +12,6 @@ class Modal extends React.Component {
     }
 
     closeModal = () => {
-
         const {toggle, animateDuration} = this.props;
         this.setState({
             isActive: false
@@ -23,27 +22,16 @@ class Modal extends React.Component {
     render() {
         const {isActive} = this.state;
         const {props} = this,
-            {className, animate, animateDuration} = props,
-            {title, subtitle, description, center, children} = props,
-            {contentWidth, wrapperBg, contentBg, closeSymbol, toggle} = props,
+            {className, animate} = props,
+            {children} = props,
+            {toggle} = props,
             classNames = `${className}${animate ? `modal-animate modal-animate-${animate} ` : ''}${isActive ? 'active' : ''}`;
-
+        console.log(props);
         return (
-            <ModalView className={classNames}
-                       close={animate ? this.closeModal : toggle}
-                       contentWidth={contentWidth}
-                       wrapperBg={wrapperBg}
-                       contentBg={contentBg}
-                       title={title}
-                       subtitle={subtitle}
-                       description={description}
-                       animate={animate}
-                       animateDuration={animate && animateDuration}
-                       center={center}
-                       closeSymbol={closeSymbol}>
-
+            <ModalView {...props}
+                       className={classNames}
+                       close={animate ? this.closeModal : toggle}>
                 {children}
-
             </ModalView>
         )
     }

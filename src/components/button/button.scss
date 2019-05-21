@@ -1,0 +1,36 @@
+@import "../../assets/css/variables/variables";
+.button {
+  border: 0;
+  background-color: #000;
+  color: #fff;
+  padding:  10px 20px;
+  cursor: pointer;
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  &-min {
+    @include fontSize('min')
+  }
+  &-xxs {
+    @include fontSize('xxs')
+  }
+  &-xs {
+    @include fontSize('xs')
+  }
+  &-sm {
+    @include fontSize('sm')
+  }
+  &-md {
+    @include fontSize('md')
+  }
+  &-lg {
+    @include fontSize('lg')
+  }
+  &-xxl {
+    @include fontSize('xxl')
+  }
+  &-max {
+    @include fontSize('max')
+  }
+}
