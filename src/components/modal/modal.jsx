@@ -20,13 +20,13 @@ class Modal extends React.Component {
     };
 
     render() {
-        const {isActive} = this.state;
-        const {props} = this,
+        const {props, state} = this,
+            {isActive} = state,
             {className, animate} = props,
             {children} = props,
             {toggle} = props,
-            classNames = `${className}${animate ? `modal-animate modal-animate-${animate} ` : ''}${isActive ? 'active' : ''}`;
-        console.log(props);
+            classNames = `${className}${animate ? `modal-animate modal-animate-${animate}` : ''}${isActive ? ' active' : ''}`;
+
         return (
             <ModalView {...props}
                        className={classNames}

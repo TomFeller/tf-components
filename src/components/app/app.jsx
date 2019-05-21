@@ -31,7 +31,7 @@ class App extends React.Component {
                        subtitle={'Modal subtitle'}
                        description={'Modal description'}/>
                 }
-                <Button onClick={this.toggleModal} size={'sm'} block color={'red'}/>
+                <Button onClick={this.toggleModal} size={'sm'} block link color={'red'}/>
             </div>
         );
     }

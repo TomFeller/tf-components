@@ -6,8 +6,9 @@ class Button extends React.Component {
     render() {
         const {props} = this,
             {className, children, value} = props,
-            {size, block} = props,
-            classNames = `${className}button button-${size}${block ? ' button-block' : ''}`;
+            {size, block, link} = props,
+            classNames = `${className}btn btn-${size}${block ? ' btn-block' : ''}${link ? ' btn-link' : ''}`;
+
 
         return (
             <ButtonView {...props}
@@ -31,6 +32,7 @@ Button.propTypes = {
     color: PropTypes.string,
     padding: PropTypes.string,
     size: PropTypes.oneOf(['min', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'max']),
-    block: PropTypes.bool
+    block: PropTypes.bool,
+    link: PropTypes.bool,
 };
 export default Button;

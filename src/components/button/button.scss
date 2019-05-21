@@ -1,5 +1,5 @@
 @import "../../assets/css/variables/variables";
-.button {
+.btn {
   border: 0;
   background-color: #000;
   color: #fff;
@@ -10,27 +10,27 @@
     width: 100%;
   }
   &-min {
-    @include fontSize('min')
+    @include fontSize('min');
   }
   &-xxs {
-    @include fontSize('xxs')
+    @include fontSize('xxs');
   }
   &-xs {
-    @include fontSize('xs')
+    @include fontSize('xs');
   }
   &-sm {
-    @include fontSize('sm')
+    @include fontSize('sm');
   }
   &-md {
-    @include fontSize('md')
+    @include fontSize('md');
   }
   &-lg {
-    @include fontSize('lg')
+    @include fontSize('lg');
   }
   &-xxl {
-    @include fontSize('xxl')
+    @include fontSize('xxl');
   }
   &-max {
-    @include fontSize('max')
+    @include fontSize('max');
   }
 }
