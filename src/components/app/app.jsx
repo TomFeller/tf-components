@@ -25,9 +25,10 @@ class App extends React.Component {
                 <Modal toggle={this.toggleModal}
                        center
                        active={modalActive}
-                       animate={'fade'}
-                       title={'bla'}
-                       subtitle={'bli'}/>
+                       animate={'slide-l'}
+                       title={'Modal title'}
+                       subtitle={'Modal subtitle'}
+                       description={'Modal description'}/>
                 }
                 <button onClick={this.toggleModal}>vds</button>
             </div>

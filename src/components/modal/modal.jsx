@@ -24,7 +24,7 @@ class Modal extends React.Component {
         const {isActive} = this.state;
         const {props} = this,
             {className, animate, animateDuration} = props,
-            {title, subtitle, center, children} = props,
+            {title, subtitle, description, center, children} = props,
             {contentWidth, wrapperBg, contentBg, closeSymbol, toggle} = props,
             classNames = `${className}${animate ? `modal-animate modal-animate-${animate} ` : ''}${isActive ? 'active' : ''}`;
 
@@ -36,6 +36,7 @@ class Modal extends React.Component {
                        contentBg={contentBg}
                        title={title}
                        subtitle={subtitle}
+                       description={description}
                        animate={animate}
                        animateDuration={animate && animateDuration}
                        center={center}
@@ -59,11 +60,12 @@ Modal.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string,
     subtitle: PropTypes.string,
+    description: PropTypes.string,
     wrapperBg: PropTypes.string,
     contentBg: PropTypes.string,
     contentWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     close: PropTypes.func,
-    animate: PropTypes.string,
+    animate: PropTypes.oneOf(['fade', 'scale', 'slide-t', 'slide-r', 'slide-b', 'slide-l']),
     animateDuration: PropTypes.number,
     closeSymbol: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 

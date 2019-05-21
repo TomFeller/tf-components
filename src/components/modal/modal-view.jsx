@@ -5,7 +5,7 @@ const ModalView = (props) => {
     const {close, closeSymbol} = props,
         {className, animateDuration} = props,
         {wrapperBg, contentBg, contentWidth} = props,
-        {title, subtitle, center, children} = props;
+        {title, subtitle, description, center, children} = props;
 
     return (
         <div className={`modal ${className}`}
@@ -24,7 +24,7 @@ const ModalView = (props) => {
 
                 {title && <h2 className={'modal_title'}>{title}</h2>}
                 {subtitle && <h4 className={'modal_subtitle'}>{subtitle}</h4>}
-
+                {description && <p className={'modal_description'}>{description}</p>}
                 {children && children}
 
             </div>
