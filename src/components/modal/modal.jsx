@@ -1,5 +1,6 @@
 import React from 'react';
 import {ModalView} from "./modal-view";
+import PropTypes from "prop-types";
 
 class Modal extends React.Component {
     constructor(props) {
@@ -11,30 +12,34 @@ class Modal extends React.Component {
     }
 
     closeModal = () => {
+
+        const {toggle, animateDuration} = this.props;
         this.setState({
             isActive: false
         });
-        setTimeout(this.props.toggle, this.props.animateDuration * 1000);
+        setTimeout(toggle, animateDuration * 1000);
     };
 
     render() {
         const {isActive} = this.state;
         const {props} = this,
             {className, animate, animateDuration} = props,
-            {title, subtitle, children} = props,
-            {contentWidth, wrapperBg, contentBg} = props,
+            {title, subtitle, center, children} = props,
+            {contentWidth, wrapperBg, contentBg, closeSymbol, toggle} = props,
             classNames = `${className}${animate ? `modal-animate modal-animate-${animate} ` : ''}${isActive ? 'active' : ''}`;
 
         return (
             <ModalView className={classNames}
-                       close={animate ? this.closeModal : props.toggle}
+                       close={animate ? this.closeModal : toggle}
                        contentWidth={contentWidth}
                        wrapperBg={wrapperBg}
                        contentBg={contentBg}
                        title={title}
                        subtitle={subtitle}
                        animate={animate}
-                       animateDuration={animate && animateDuration}>
+                       animateDuration={animate && animateDuration}
+                       center={center}
+                       closeSymbol={closeSymbol}>
 
                 {children}
 
@@ -44,11 +49,23 @@ class Modal extends React.Component {
 
     static defaultProps = {
         contentWidth: 500,
-        wrapperBg: '#000000',
-        contentBg: '#ffffff',
         className: '',
-        animateDuration: .5
+        animateDuration: .5,
+        closeSymbol: 'X'
     }
 }
 
+Modal.propTypes = {
+    className: PropTypes.string,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    wrapperBg: PropTypes.string,
+    contentBg: PropTypes.string,
+    contentWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    close: PropTypes.func,
+    animate: PropTypes.string,
+    animateDuration: PropTypes.number,
+    closeSymbol: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+
+};
 export default Modal;
