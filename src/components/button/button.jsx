@@ -20,9 +20,8 @@ class Button extends React.Component {
     static defaultProps = {
         className: '',
         value: 'click',
-        backgroundColor: '#333',
         color: '#fff',
-        size: 'md'
+        size: 'sm'
     }
 }
 

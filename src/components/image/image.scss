@@ -1,12 +1,6 @@
 @import "../../assets/css/variables/variables";
-.btn {
-  border: 0;
-  color: #fff;
-  @include gutter(sm);
-  cursor: pointer;
-  &-link {
-    background-color: transparent;
-  }
+.img {
+  max-width: 100%;
   &-block {
     display: block;
     width: 100%;

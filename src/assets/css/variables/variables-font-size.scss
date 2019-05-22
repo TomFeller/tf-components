@@ -1,13 +1,14 @@
+$font-size-base: 20px;
 $font-size: (
-        min: 5px,
-        xxs: 10px,
-        xs: 15px,
-        sm: 20px,
-        md: 40px,
-        lg: 60px,
-        xl: 80px,
-        xxl: 100px,
-        max: 200px
+        min: $font-size-base / 3,
+        xxs: $font-size-base / 2,
+        xs: $font-size-base / 1.5,
+        sm: $font-size-base,
+        md: $font-size-base * 1.5,
+        lg: $font-size-base * 2,
+        xl: $font-size-base * 3,
+        xxl: $font-size-base * 4,
+        max: $font-size-base * 5,
 ) !default;
 
 @mixin fontSize($size) {

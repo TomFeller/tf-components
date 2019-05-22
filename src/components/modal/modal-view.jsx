@@ -1,5 +1,6 @@
 import React from 'react';
 import './modal.css';
+import Text from "../text/text";
 
 const ModalView = (props) => {
     const {close, closeSymbol} = props,
@@ -16,9 +17,9 @@ const ModalView = (props) => {
             </div>
             <div className={'modal_content'}
                  style={{width: contentWidth, backgroundColor: contentBg, textAlign: center && 'center'}}>
-                {title && <h2 className={'modal_title'}>{title}</h2>}
-                {subtitle && <h4 className={'modal_subtitle'}>{subtitle}</h4>}
-                {description && <p className={'modal_description'}>{description}</p>}
+                {title && <Text tag={2} className={'modal_title'}>{title}</Text>}
+                {subtitle && <Text tag={4} className={'modal_subtitle'}>{subtitle}</Text>}
+                {description && <Text tag={'p'} className={'modal_description'}>{description}</Text>}
                 {children && children}
             </div>
         </div>

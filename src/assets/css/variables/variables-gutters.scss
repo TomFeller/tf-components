@@ -1,0 +1,31 @@
+$gutter: (
+        min: 1px,
+        xxs: 5px,
+        xs: 10px,
+        sm: 15px,
+        md: 30px,
+        lg: 45px,
+        xl: 60px,
+        xxl: 75px,
+        max: 90px
+) !default;
+
+@mixin gutter($size, $dir: 0) {
+  $value: map-get($gutter, $size);
+  @if ($dir == 0) {
+    padding: $value;
+  } @else {
+    @if ($dir == x or $dir == l) {
+      padding-left: $value;
+    }
+    @if ($dir == x or $dir == r) {
+      padding-right: $value;
+    }
+    @if ($dir == y or $dir == t) {
+      padding-top: $value;
+    }
+    @if ($dir == y or $dir == b) {
+      padding-bottom: $value;
+    }
+  }
+}

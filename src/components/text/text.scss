@@ -1,15 +1,13 @@
 @import "../../assets/css/variables/variables";
-.btn {
-  border: 0;
-  color: #fff;
-  @include gutter(sm);
-  cursor: pointer;
-  &-link {
-    background-color: transparent;
+.text {
+  &-left {
+    text-align: left;
   }
-  &-block {
-    display: block;
-    width: 100%;
+  &-right {
+    text-align: right;
+  }
+  &-center {
+    text-align: center;
   }
   &-min {
     @include fontSize('min');

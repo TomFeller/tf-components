@@ -39,7 +39,7 @@ class Modal extends React.Component {
     static defaultProps = {
         contentWidth: 500,
         className: '',
-        animateDuration: .5,
+        animateDuration: .3,
         closeSymbol: 'X'
     }
 }
