@@ -15,6 +15,7 @@ import {FaBeer} from 'react-icons/fa';
 import Menu from "../menu/menu";
 import Block from "../block/block";
 import Slider from "../slider/slider";
+import Tabs from "../tabs/tabs";
 
 const headerMainMenu = [{label: 'home', href: 'home'}, {label: 'about', href: 'about'}];
 const headerIconsMenu = [{
@@ -76,39 +77,12 @@ class App extends React.Component {
                     <Page>
 
                         <Container>
-                            <Slider debug={true} items={[ <Card>
-                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
-                                <CardTitle center>BLA</CardTitle>
-                                <CardContent>
-                                    <CardImage
-                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                    <Button onClick={this.toggleModal} value={'show more'} block/>
-                                </CardContent>
-                            </Card>,  <Card>
-                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
-                                <CardTitle center>BLA</CardTitle>
-                                <CardContent>
-                                    <CardImage
-                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                    <Button onClick={this.toggleModal} value={'show more'} block/>
-                                </CardContent>
-                            </Card>,  <Card>
-                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
-                                <CardTitle center>BLA</CardTitle>
-                                <CardContent>
-                                    <CardImage
-                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                    <Button onClick={this.toggleModal} value={'show more'} block/>
-                                </CardContent>
-                            </Card>,  <Card>
-                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
-                                <CardTitle center>BLA</CardTitle>
-                                <CardContent>
-                                    <CardImage
-                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                    <Button onClick={this.toggleModal} value={'show more'} block/>
-                                </CardContent>
-                            </Card>]} speed={.5} />
+
+
+
+
+
+                            <Tabs debug={true} items={[ <div>bla</div>, <div>bli</div>, <div>blue</div>]}/>
                         </Container>
 
                         <Block gutter={'md'}>
