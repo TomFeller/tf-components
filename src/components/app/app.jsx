@@ -8,12 +8,13 @@ import Footer from "../layout/footer";
 import Page from "../layout/page";
 import Text from "../text/text";
 import Card from "../card";
-import {CardTitle, CardSubtitle, CardContent, CardImage} from "../card/card-utils/card-utils";
-import {HeaderLogo, HeaderMenu} from "../layout/header/header-utils/header-utils";
+import {CardTitles, CardTitle, CardContent, CardImage} from "../card/card-utils/card-utils";
+import {HeaderLogo} from "../layout/header/header-utils/header-utils";
 import Image from "../image/image";
 import {FaBeer} from 'react-icons/fa';
 import Menu from "../menu/menu";
-
+import Block from "../block/block";
+import Slider from "../slider/slider";
 
 const headerMainMenu = [{label: 'home', href: 'home'}, {label: 'about', href: 'about'}];
 const headerIconsMenu = [{
@@ -28,7 +29,8 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            modalActive: false
+            modalActive: false,
+            debug: this.props.debug
         }
     }
 
@@ -39,8 +41,8 @@ class App extends React.Component {
     };
 
     render() {
-        const {modalActive} = this.state;
-        console.log(this.props)
+        const {modalActive, debug} = this.state;
+        console.log(this.props);
         return (
             <ScreenClassProvider render={
                 screenClass => (
@@ -48,7 +50,7 @@ class App extends React.Component {
                         Screen class: {screenClass}
                     </p>)}>
 
-                <div id={'app'} className={'app'}>
+                <div id={'app'} className={`app ${debug ? 'debug' : ''}`}>
                     {modalActive &&
                     <Modal toggle={this.toggleModal}
                            center
@@ -72,66 +74,89 @@ class App extends React.Component {
                     </Header>
 
                     <Page>
+
                         <Container>
-                            <Text tag={1} value={'Welcome'} center/>
-                            <Row>
-                                <Col sm={6} md={4} lg={3}>
-                                    <Card>
-                                        <CardTitle>Card Title</CardTitle>
-                                        <CardSubtitle>Card Subtitle</CardSubtitle>
-                                        <CardImage
-                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                        <CardContent>
-                                            <Button onClick={this.toggleModal} value={'show more'} block/>
-                                        </CardContent>
-                                    </Card>
-                                </Col>
-                                <Col sm={6} md={4} lg={3}>
-                                    <Card>
-                                        <CardTitle>Card Title</CardTitle>
-                                        <CardSubtitle>Card Subtitle</CardSubtitle>
-                                        <CardImage
-                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                        <CardContent>
-                                            <Button onClick={this.toggleModal} value={'show more'} block/>
-                                        </CardContent>
-                                    </Card>
-                                </Col>
-                                <Col sm={6} md={4} lg={3}>
-                                    <Card>
-                                        <CardTitle>Card Title</CardTitle>
-                                        <CardSubtitle>Card Subtitle</CardSubtitle>
-                                        <CardImage
-                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                        <CardContent>
-                                            <Button onClick={this.toggleModal} value={'show more'} block/>
-                                        </CardContent>
-                                    </Card>
-                                </Col>
-                                <Col sm={6} md={4} lg={3}>
-                                    <Card>
-                                        <CardTitle>Card Title</CardTitle>
-                                        <CardSubtitle>Card Subtitle</CardSubtitle>
-                                        <CardImage
-                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                        <CardContent>
-                                            <Button onClick={this.toggleModal} value={'show more'} block/>
-                                        </CardContent>
-                                    </Card>
-                                </Col>
-                                <Col sm={6} md={4} lg={3}>
-                                    <Card>
-                                        <CardTitle>Card Title</CardTitle>
-                                        <CardSubtitle>Card Subtitle</CardSubtitle>
-                                        <CardImage
-                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
-                                        <CardContent>
-                                            <Button onClick={this.toggleModal} value={'show more'} block/>
-                                        </CardContent>
-                                    </Card>
-                                </Col>
-                            </Row>
+                            <Slider debug={true} items={[ <Card>
+                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
+                                <CardTitle center>BLA</CardTitle>
+                                <CardContent>
+                                    <CardImage
+                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    <Button onClick={this.toggleModal} value={'show more'} block/>
+                                </CardContent>
+                            </Card>,  <Card>
+                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
+                                <CardTitle center>BLA</CardTitle>
+                                <CardContent>
+                                    <CardImage
+                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    <Button onClick={this.toggleModal} value={'show more'} block/>
+                                </CardContent>
+                            </Card>,  <Card>
+                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
+                                <CardTitle center>BLA</CardTitle>
+                                <CardContent>
+                                    <CardImage
+                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    <Button onClick={this.toggleModal} value={'show more'} block/>
+                                </CardContent>
+                            </Card>,  <Card>
+                                <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
+                                <CardTitle center>BLA</CardTitle>
+                                <CardContent>
+                                    <CardImage
+                                        src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    <Button onClick={this.toggleModal} value={'show more'} block/>
+                                </CardContent>
+                            </Card>]} speed={.5} />
                         </Container>
+
+                        <Block gutter={'md'}>
+                            <Container>
+                                <Text tag={1} value={'Welcome'} center/>
+                                <Row>
+                                    <Col sm={6}>
+                                        <Card>
+                                            <CardTitles title={'Card Title'} subtitle={'Card Subtitle'}/>
+                                            <CardTitle center>BLA</CardTitle>
+                                            <CardContent>
+                                                <CardImage
+                                                    src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                                <Button onClick={this.toggleModal} value={'show more'} block/>
+                                            </CardContent>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Block>
+
+                        <Block gutter={'md'}>
+                            <Container>
+                                <Row>
+                                    <Col sm={6}>
+                                        <Image
+                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    </Col>
+                                    <Col sm={6}>
+                                        <Text tag={2} center>TITLE</Text>
+                                        <Text tag={3} center>TITLE</Text>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Block>
+
+                        <Block gutter={'md'}>
+                            <Container>
+                                <Card>
+                                    <CardTitles title={'Title'} subtitle={'Subtitle'} center/>
+                                    <CardContent>
+                                        <CardImage
+                                            src={'https://www.virginexperiencedays.co.uk/content/img/product/large/the-view-from-the-12102928.jpg'}/>
+                                    </CardContent>
+                                </Card>
+                            </Container>
+                        </Block>
+
                     </Page>
 
                     <Footer backgroundColor={'red'} color={'pink'}/>

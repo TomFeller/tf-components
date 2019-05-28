@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 class Card extends React.Component {
     render() {
         const {props} = this,
-            {className} = props,
+            {className, center} = props,
             {children} = props,
-            classNames = `${className}`;
+            classNames = `${className}${center ? ' card-center' : ''}`;
 
         return (
             <CardView {...props}

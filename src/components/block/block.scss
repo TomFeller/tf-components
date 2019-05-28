@@ -1,0 +1,33 @@
+@import "../../assets/css/variables/variables";
+.app-block {
+  max-width: 100%;
+  &-gutter {
+    &-min {
+      @include gutter('min', 'y');
+    }
+    &-xxs {
+      @include gutter('xxs', 'y');
+    }
+    &-xs {
+      @include gutter('xs', 'y');
+    }
+    &-sm {
+      @include gutter('sm', 'y');
+    }
+    &-md {
+      @include gutter('md', 'y');
+    }
+    &-lg {
+      @include gutter('lg', 'y');
+    }
+    &-xl {
+      @include gutter('xl', 'y');
+    }
+    &-xxl {
+      @include gutter('xxl', 'y');
+    }
+    &-max {
+      @include gutter('max', 'y');
+    }
+  }
+}
